@@ -1,0 +1,7 @@
+<li>
+  <%= link_to subject.name, subject %>
+  <% if current_user && current_user.admin? %>
+  | <%= link_to "delete", subject, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+</li>

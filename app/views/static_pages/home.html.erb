@@ -1,0 +1,27 @@
+<% if signed_in? %>
+<% provide(:title, 'Home') %>
+<%= gravatar_for current_user %>
+<h1>
+  <%= current_user.name %>
+</h1>
+<span>
+  <%= link_to "view my profile", current_user %>
+</span>
+<br/>
+<%if current_user.admin? || current_user.teacher?%>
+<br/>
+<%= link_to "Create subject", new_subject_path, class: "btn btn-default" %>
+<br/>
+<%end%>
+<%else%>
+<div class="row">
+  <aside class="span8">
+     <h1>Suleyman Demirel College</h1>
+    <%= link_to image_tag("image.jpg",id:"image") %>
+  </aside>
+   <aside class="span4">
+     <%= render 'users/form' %>
+  </aside>
+</div>
+
+<%end%>
