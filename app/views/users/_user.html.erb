@@ -6,8 +6,4 @@
     | <%= link_to "delete", user, method: :delete,
                                   data: { confirm: "You sure?" } %>
   <% end %>
-  <br/>
-   <% if user.admin?%>
-  <span id="admin">Admin</span>
-  <%end%>
 </li>

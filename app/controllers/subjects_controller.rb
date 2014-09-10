@@ -10,6 +10,8 @@ class SubjectsController < ApplicationController
   # GET /subjects/1
   # GET /subjects/1.json
   def show
+    @user=User.find(@subject.user_id)
+    @assignments = Assignment.where(:subject_id => @subject)
   end
 
   # GET /subjects/new
@@ -24,7 +26,8 @@ class SubjectsController < ApplicationController
   # POST /subjects
   # POST /subjects.json
   def create
-    @subject =current_user.subjects.new(subject_params)
+    @subject = current_user.group.subjects.new(subject_params)
+    @subject.user_id = current_user.id
     respond_to do |format|
       if @subject.save
         format.html { redirect_to @subject, notice: 'Subject was successfully created.' }

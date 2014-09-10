@@ -1,27 +1,42 @@
+<div class="container">
 <% if signed_in? %>
 <% provide(:title, 'Home') %>
+ <div class="row">
+    <aside class="span4">
+  <div id="gravatar">    
 <%= gravatar_for current_user %>
+   </div>
 <h1>
   <%= current_user.name %>
 </h1>
-<span>
-  <%= link_to "view my profile", current_user %>
-</span>
-<br/>
 <%if current_user.admin? || current_user.teacher?%>
 <br/>
 <%= link_to "Create subject", new_subject_path, class: "btn btn-default" %>
 <br/>
 <%end%>
+          </aside>
+    <div class="span8">
+      <h3>My Subjects</h3>
+      <% current_user.group.subjects.each do |s|%>
+      <%= link_to s.name,s %>
+      <%end%>
+      
+   </div>
 <%else%>
 <div class="row">
-  <aside class="span8">
-     <h1>Suleyman Demirel College</h1>
-    <%= link_to image_tag("image.jpg",id:"image") %>
-  </aside>
-   <aside class="span4">
+    <div class="jumbotron">
+	      <div class="span8">
+      <div class="container">
+        <h1>Suleyman Demirel College</h1>
+        <p>Project "Demirel" is about to start soon...</p>
+        <a href="#">Learn More</a>
+      </div>
+    </div> 
+ 
+          <div class="span4">
      <%= render 'users/form' %>
-  </aside>
-</div>
-
+          </div>
+      </div>
+  </div>
 <%end%>
+  </div>

@@ -2,6 +2,24 @@
 .container{
 
 }
+body{
+   font-family: 'Shift', sans-serif;
+}
+.nav{
+  margin-top:15px;
+}
+.nav a {
+  color: #5a5a5a;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 14px 10px;
+  text-transform: uppercase;
+}
+
+.nav li {
+  display: inline;
+  
+}
 li{
   display:block;
 }
@@ -9,10 +27,30 @@ a{
   text-decoration:none;
   margin-right:5px;
 }
-#mainpage{
-  margin-top:72px;
+.jumbotron {
+  background-image: url('../images/sdcollege.jpg');
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-#image{
-  height:600px;
-  width:500px;
+
+.jumbotron .container {
+  position: relative;
+  top:100px;
+}
+
+.jumbotron h1 {
+  font-size: 48px;  
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+}
+
+.jumbotron p {
+  font-size: 20px;
+}
+.nav{
+   border-bottom:1px solid #dbdbdb;
+}
+#gravatar{
+  float:left;
 }

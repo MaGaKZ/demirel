@@ -1,25 +1,5 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @subject.name %>
-</p>
-
-<p>
-  <strong>Group:</strong>
-  <%= @subject.group_id %>
-</p>
-<h3>Teacher:</h3>
-<p>
-  <%= gravatar_for @user %>
-  <%=link_to @user.name,@user%>
-</p>
-<%= link_to 'Edit', edit_subject_path(@subject) %> |
-<%= link_to 'Back', subjects_path %>
-<br/>
 <h1>Listing assignments</h1>
-<br>
-<%= link_to "Marks",marks_path%>
+
 <table>
   <thead>
     <tr>
@@ -36,7 +16,7 @@
         <td><%= assignment.content %></td>
         <td><%= assignment.subject_id %></td>
         <td><%= assignment.user_id %></td>
-        <td><%= link_to 'Show', assignment_path(assignment) %></td>
+        <td><%= link_to 'Show', assignment %></td>
         <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
         <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -46,6 +26,4 @@
 
 <br>
 
-<%= link_to 'New Assignment', new_subject_assignment_path(@subject) %>
-
-
+<%= link_to 'New Assignment', new_subject_assignment_path %>

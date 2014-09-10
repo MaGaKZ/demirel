@@ -1,4 +1,5 @@
 class Subject < ActiveRecord::Base
-  has_many:marks
-  has_many:users, through: :marks
+  validates :user_id, presence: true
+  has_many :marks
+  belongs_to :group
 end
