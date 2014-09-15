@@ -19,13 +19,12 @@
 <br/>
 <h1>Listing assignments</h1>
 <br>
-<%= link_to "Marks",marks_path%>
+  <%= link_to "Marks",subject_marks_path(@subject)%>
 <table>
   <thead>
     <tr>
       <th>Content</th>
-      <th>Subject</th>
-      <th>User</th>
+     
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -33,10 +32,7 @@
   <tbody>
     <% @assignments.each do |assignment| %>
       <tr>
-        <td><%= assignment.content %></td>
-        <td><%= assignment.subject_id %></td>
-        <td><%= assignment.user_id %></td>
-        <td><%= link_to 'Show', assignment_path(assignment) %></td>
+        <td><%= link_to assignment.content,assignment_path(assignment) %></td>
         <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
         <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

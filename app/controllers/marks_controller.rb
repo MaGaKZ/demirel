@@ -1,15 +1,19 @@
 class MarksController < ApplicationController
   def new
+    @subject=Subject.find(params[:subject_id])
     @mark=Mark.new
   end
   def index
-    @users=U
+    @subject=Subject.find(params[:subject_id])
+    @users=@subject.users
+    @mark=Mark.new
   end
   def create
-    @mark=Mark.new(mark_params)
+    @subject=Subject.find(params[:subject_id])
+    @mark=@subject.marks.new(mark_params)
      if @mark.save
        flash[:success] = "Mark created successfully!"
-       redirect_to subjects_path
+       redirect_to root_path
     else
       render 'new'
     end

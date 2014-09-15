@@ -3,11 +3,11 @@ Rails.application.routes.draw do
 
   resources :subjects do
     resources :assignments, shallow: true
+    resources :marks, shallow: true
   end
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
-  resources :marks
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :groups

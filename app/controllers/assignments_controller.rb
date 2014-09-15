@@ -25,7 +25,8 @@ class AssignmentsController < ApplicationController
   # POST /assignments
   # POST /assignments.json
   def create
-    @assignment = Assignment.create(assignment_params)
+    @subject= Subject.find(params[:subject_id])
+    @assignment = @subject.assignments.new(assignment_params)
     respond_to do |format|
       if @assignment.save
         format.html { redirect_to @assignment, notice: 'Assignment was successfully created.' }

@@ -1,56 +1,78 @@
 @import "bootstrap";
-.container{
 
-}
 body{
-   font-family: 'Shift', sans-serif;
+  font-family: 'Nunito', sans-serif;
+   background-color:#FAFAFA;
+}
+.container{
+ width:980px; 
 }
 .nav{
-  margin-top:15px;
+  height:60px;
+  background-color:#474747;
 }
-.nav a {
-  color: #5a5a5a;
-  font-size: 12px;
+.nav li{
+  display:inline;
+  padding-right:10px;
+}
+.nav a:hover{
+  text-decoration:none;
+  color:#B0B0B0;
+}
+.nav a{
+  color:#fff;
+  font-size: 13px;
   font-weight: bold;
-  padding: 14px 10px;
   text-transform: uppercase;
 }
-
-.nav li {
-  display: inline;
+.nav ul{
+   padding-top:20px;
+}
+#logo{
+  height:450px;
+  width:480px;
+  border-radius: 10px;
+}
+.footer{
+   height:80px;
+  background-color:#474747;
   
 }
-li{
-  display:block;
+#profile{
+  background-color:#fff;
+  border-radius:10px;
+  height:131px;
+  -webkit-box-shadow: 0px 1px 25px 0px rgba(50, 50, 38, 0.72);
+-moz-box-shadow:    0px 1px 25px 0px rgba(50, 50, 38, 0.72);
+box-shadow:         0px 1px 25px 0px rgba(50, 50, 38, 0.72);
 }
-a{
-  text-decoration:none;
-  margin-right:5px;
+#profile h3{
+  padding-top:29px;
+   font-weight: lighter;
+ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  float:left;
+ }
+#profile h4{
+  margin-bottom:-2px;
+  padding-top:30px;
+  padding-right:470px;
+  float:right;
 }
-.jumbotron {
-  background-image: url('../images/sdcollege.jpg');
-  height: 500px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.jumbotron .container {
-  position: relative;
-  top:100px;
-}
-
-.jumbotron h1 {
-  font-size: 48px;  
-  font-family: 'Shift', sans-serif;
-  font-weight: bold;
-}
-
-.jumbotron p {
-  font-size: 20px;
-}
-.nav{
-   border-bottom:1px solid #dbdbdb;
+#profile p{
+  font-weight: lighter;
+ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-right:470px;
+  float:right;
 }
 #gravatar{
   float:left;
+}
+#gravatar img{
+  border-radius:20px;
+  margin-top:25px;
+  margin-left:37px;
+  margin-right:28px;
+}
+#counter{
+  padding-top:0px;
 }
