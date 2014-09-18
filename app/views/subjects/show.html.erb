@@ -1,30 +1,37 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
+  <% provide(:title, @subject.name) %>
+<div id="profile">
+  <div class="row">
+    <div class="span6">
+      <%= gravatar_for @user,class:"img-circle"%>
+      <h3><%= @subject.name %></h3>
+      <button class="btn btn-info"><%= link_to "Marks",subject_marks_path(@subject)%></button>
+    </div>
+    <div class="span2">
+      <h4><%=@user.name%> <%=@user.surname%></h4>
+      <p>Teacher name</p>
+    </div>
+     <div class="span2">
+       <h4><%=@subject.group.users.count%></h4>
+      <p>Number of students</p>
+    </div>
+     <div class="span2">
+       <h4><%=@assignments.count%></h4>
+      <p>Homeworks</p>
+    </div>
+  </div>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @subject.name %>
-</p>
+<div class="homeworks">
+  <div class="row">
+<h3>Homeworks</h3>
 
-<p>
-  <strong>Group:</strong>
-  <%= @subject.group_id %>
-</p>
-<h3>Teacher:</h3>
-<p>
-  <%= gravatar_for @user %>
-  <%=link_to @user.name,@user%>
-</p>
-<%= link_to 'Edit', edit_subject_path(@subject) %> |
-<%= link_to 'Back', subjects_path %>
-<br/>
-<h1>Listing assignments</h1>
-<br>
-  <%= link_to "Marks",subject_marks_path(@subject)%>
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Content</th>
-     
+      <th>Created at</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -33,15 +40,20 @@
     <% @assignments.each do |assignment| %>
       <tr>
         <td><%= link_to assignment.content,assignment_path(assignment) %></td>
+        <td><%= assignment.created_at %></td>
+        <%if current_user.id == @user.id%>
         <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
         <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Assignment', new_subject_assignment_path(@subject) %>
-
-
+    <button class="btn btn-info">
+<%= link_to 'New Assignment', new_subject_assignment_path(@subject),style:"color:#fff;text-decoration:none" %>
+      </button>
+</div>
+  </div>
+</div>

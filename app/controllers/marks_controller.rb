@@ -13,7 +13,7 @@ class MarksController < ApplicationController
     @mark=@subject.marks.new(mark_params)
      if @mark.save
        flash[:success] = "Mark created successfully!"
-       redirect_to root_path
+       redirect_to :back
     else
       render 'new'
     end

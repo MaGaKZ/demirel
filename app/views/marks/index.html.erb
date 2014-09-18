@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -14,7 +14,7 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= user.surname %></td>
-          <% user.marks.map do |mark| %>
+        <% user.marks.where(:subject_id =>@subject).map do |mark| %>
         <td><%= mark.value %></td>
         <%end%>
         <td><%= render 'marks/form', user: user %></td>       

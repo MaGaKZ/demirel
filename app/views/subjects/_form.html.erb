@@ -27,4 +27,8 @@
 <%= f.submit "Create subject", class: "btn btn-large btn-primary" %>
 
 <% end %>
-<% end %>
+<% else %>
+<div class="text-error">
+  <h1>You don't have permission!</h1>
+</div>
+<%end%>

@@ -10,6 +10,8 @@ class AssignmentsController < ApplicationController
   # GET /assignments/1
   # GET /assignments/1.json
   def show
+     @assignment = Assignment.find(params[:id])
+    @comments=Comment.where(:assignment_id =>@assignment)
   end
 
   # GET /assignments/new

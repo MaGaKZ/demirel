@@ -28,11 +28,6 @@ body{
 .nav ul{
    padding-top:20px;
 }
-#logo{
-  height:450px;
-  width:480px;
-  border-radius: 10px;
-}
 .footer{
    height:80px;
   background-color:#474747;
@@ -47,32 +42,80 @@ body{
 box-shadow:         0px 1px 25px 0px rgba(50, 50, 38, 0.72);
 }
 #profile h3{
-  padding-top:29px;
    font-weight: lighter;
- font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  float:left;
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   padding-left:120px;
+   padding-top:30px;
  }
-#profile h4{
-  margin-bottom:-2px;
-  padding-top:30px;
-  padding-right:470px;
-  float:right;
-}
 #profile p{
   font-weight: lighter;
  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  padding-right:470px;
-  float:right;
 }
-#gravatar{
+.span6 img{
+  border-radius:10px;
+  margin-top:23px;
+  margin-left:23px;
   float:left;
 }
-#gravatar img{
-  border-radius:20px;
-  margin-top:25px;
-  margin-left:37px;
-  margin-right:28px;
+.span2{
+  padding-top:30px;
 }
-#counter{
-  padding-top:0px;
+.span2 h4{
+  margin-bottom:5px;
+}
+.subjects .row h3{
+   font-weight: lighter;
+ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-left:20px;
+  padding-top:20px;
+}
+.subjects .span2{
+  margin-left:0px;
+  margin-right:15px;
+}
+.subname{
+ text-align:center;
+  padding:40px 30px; 
+  border:1px solid #474747;
+  border-radius:15px;
+}
+.subname:hover{
+  background-color:#474747;
+}
+.subjects a{
+  text-decoration:none;
+  font-size:20px;
+  font-weight: lighter;
+ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.subjects a:hover{
+   text-decoration:none;
+  color:#fff;
+  font-size:20px;
+}
+.homeworks .row h3{
+   font-weight: lighter;
+ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-left:20px;
+  padding-top:20px;
+  float:left;
+}
+#profile button{
+  margin-left: 17px;
+  
+}
+#profile button a{
+  color:#fff;
+  text-decoration:none;
+}
+.content {
+  display: block;
+}
+.jumbotron img{
+  width:550px;
+  border-radius:20px;
+}
+.jumbotron h1{
+  font-weight: lighter;
+ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

@@ -1,25 +1,52 @@
 <div class="container">
 <% if signed_in? %>
 <% provide(:title, 'Home') %>
-   <div id="profile">
-     <div id="gravatar">
-<%= gravatar_for current_user ,class:"img-circle"%>
-     </div>
-<h3>
-  <%= current_user.name %> <%=current_user.surname%>
-</h3>
-      <h4><%=current_user.group.name%></h4>
+<div id="profile">
+ <div class="row">
+  <div class="span6">
+<%= gravatar_for current_user,class:"img-circle"%>   
+<h3><%= current_user.name %> <%=current_user.surname%></h3>
+   </div>
+  
+  <div class="span2">    
+      <h4><%=current_user.group.name%></h4>     
        <p>Group ID</p>
+  </div>
+  
+  <div class="span2">   
     <h4><%=current_user.group.subjects.count%></h4>
-          </div>
-    <div class="span8">
-      <h3>My Subjects</h3>
+    <p>quantity of subjects</p>
+     </div>
+   <div class="span2">
+     <h4>NULL</h4>
+     <p>Average marks</p>
+   </div>
+   </div>  
+  </div>
+    <div class="subjects">
+      <div class="row">
+        <h3>My Subjects</h3>
+        <div class="span8">          
       <% current_user.group.subjects.each do |s|%>
-      <%= link_to s.name,s %>
+           <div class="span2">
+             
+             <%= link_to s  do %>
+             <div class="subname">
+               <%= s.name %>
+             </div>
+             <% end %>           
+          </div>
       <%end%>
+           
+        </div>
+        <div class="span4"></div>
+         <button class="btn btn-primary"> <%= link_to "Create Subject",new_subject_path%> </button>
+    </div>
   </div>
-  </div>
+    
 <%else%>
+  
+  
 <div class="row">
     <div class="jumbotron">
 	      <div class="span8">

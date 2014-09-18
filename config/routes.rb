@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  
-
   resources :subjects do
-    resources :assignments, shallow: true
+    resources :assignments, shallow: true do
+      resources :comments, shallow: true
+    end
     resources :marks, shallow: true
   end
   match '/help',    to: 'static_pages#help',    via: 'get'

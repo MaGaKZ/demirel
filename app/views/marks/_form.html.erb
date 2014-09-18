@@ -1,5 +1,5 @@
 <%= form_for [@subject,@mark] do |f|%>
   <%=f.text_field :value, :style => "width:30px"%>
   <%= f.hidden_field :user_id, :value => user.id %>
-<%= f.submit "Create", class: "btn btn-default"%>
+<%= f.submit "Put", class: "btn btn-default"%>
 <%end%>
