@@ -1,22 +1,8 @@
 <p id="notice"><%= notice %></p>
+<h3>Homeworks</h3>
 
-<p>
-  <strong>Content:</strong>
+ 
   <%= @assignment.content %>
-</p>
-
-<p>
-  <strong>Subject:</strong>
-  <%= @assignment.subject_id %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @assignment.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_assignment_path(@assignment) %> |
-
 
 
 <h1>Listing comments</h1>
@@ -26,20 +12,15 @@
     <tr>
       <th>Content</th>
       <th>User</th>
-      <th>Assignment</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.content %></td>
-        <td><%= comment.user_id %></td>
-        <td><%= comment.assignment_id %></td>
-        <td><%= link_to 'Show', comment %></td>
-        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=link_to comment.content, comment %></td>
+        <td><%= User.find(comment.user_id).name %></td>
       </tr>
     <% end %>
   </tbody>

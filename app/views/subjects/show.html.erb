@@ -6,7 +6,9 @@
     <div class="span6">
       <%= gravatar_for @user,class:"img-circle"%>
       <h3><%= @subject.name %></h3>
+      <%if current_user.id == @user.id%>
       <button class="btn btn-info"><%= link_to "Marks",subject_marks_path(@subject)%></button>
+       <%end%>
     </div>
     <div class="span2">
       <h4><%=@user.name%> <%=@user.surname%></h4>
@@ -50,10 +52,11 @@
   </tbody>
 </table>
 
-<br>
+<br><%if current_user.id == @user.id%>
     <button class="btn btn-info">
 <%= link_to 'New Assignment', new_subject_assignment_path(@subject),style:"color:#fff;text-decoration:none" %>
       </button>
+     <%end%>
 </div>
   </div>
 </div>
