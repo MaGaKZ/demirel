@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }
   belongs_to :group
   has_many :marks
+  has_attached_file :avatar
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   has_secure_password
   def User.new_remember_token
     SecureRandom.urlsafe_base64

@@ -1,7 +1,7 @@
 <% provide(:title, @user.name) %>
 <div class="row">
   <div class="col-md-4">
-      <%= gravatar_for @user %>
+    <%=image_tag @user.avatar.url, class: "img-circle",alt:@user.name %>
    Name:    <%= @user.name %>
     <br/>
    Surname:     <%= @user.surname %>

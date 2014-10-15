@@ -30,19 +30,12 @@
 <h3>Homeworks</h3>
 
 <table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th>Created at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
+ 
   <tbody>
     <% @assignments.each do |assignment| %>
       <tr>
         <td><%= link_to assignment.content,assignment_path(assignment) %></td>
-        <td><%= assignment.created_at %></td>
+        <td><%= assignment.created_at.to_formatted_s(:short)  %></td>
         <%if current_user.id == @user.id%>
         <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
         <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
