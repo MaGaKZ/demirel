@@ -3,6 +3,7 @@
 body{
  font-weight: lighter;
  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height:26px;
 }
 .container{
  width:980px; 
@@ -65,36 +66,18 @@ box-shadow:         0px 1px 25px 0px rgba(50, 50, 38, 0.72);
 .subjects .row h3{
    font-weight: lighter;
  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  padding-left:20px;
   padding-top:20px;
 }
 .subjects .span2{
   margin-left:0px;
   margin-right:15px;
 }
-.subname{
- text-align:center;
-  padding:40px 30px; 
-  border:1px solid #474747;
-  border-radius:15px;
- 
-}
-.subname:hover{
-  background-color:#474747;
-}
+
 .subjects a{
   text-decoration:none;
   font-size:20px;
  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   
-}
-.subjects .span4 a{
-  color:#fff;
-}
-.subjects a:hover{
-   text-decoration:none;
-  color:#fff;
-  font-size:20px;
 }
 .homeworks .row h3{
    font-weight: lighter;
@@ -134,4 +117,11 @@ tr a{
 }
 .img-circle{
   width:85px;
+}
+.subname{
+  margin-right: 207px;
+  border-bottom:1px solid #474747;
+}
+.list-group a:first-child{
+  margin-right: 0px;
 }

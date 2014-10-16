@@ -25,21 +25,22 @@
   </div>
     <div class="subjects">
       <div class="row">
-        <h3>My Subjects</h3>
-        <div class="span8">          
+        
+        <div class="span4">
+          <div class="list-group">
+            <a href="#" class="list-group-item disabled">
+              <h3>My Subjects</h3>
+            </a>
       <% current_user.group.subjects.each do |s|%>
-           <div class="span2">
-             
-             <%= link_to s  do %>
-             <div class="subname">
-               <%= s.name %>
-             </div>
-             <% end %>           
-          </div>
+            <div class="subname">
+             <%= link_to s,class:"list-group-item"  do %>           
+               <%= s.name %>        
+             <% end %> 
+            </div>
       <%end%>
            
         </div>
-        <div class="span4">
+        <div class="span8">
          <button class="btn btn-primary"> <%= link_to "Create Subject",new_subject_path%> </button>
           </div>
     </div>
