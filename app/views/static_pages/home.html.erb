@@ -25,6 +25,7 @@
   </div>
     <div class="subjects">
       <div class="row">
+<<<<<<< HEAD
         <div id="hey">
         <h3>My Subjects</h3>
         </div>
@@ -44,6 +45,25 @@
          <div class="renders">
            
           </div>
+=======
+        
+        <div class="span4">
+          <div class="list-group">
+            <a href="#" class="list-group-item disabled">
+              <h3>My Subjects</h3>
+            </a>
+      <% current_user.group.subjects.each do |s|%>
+            <div class="subname">
+             <%= link_to s,class:"list-group-item"  do %>           
+               <%= s.name %>        
+             <% end %> 
+            </div>
+      <%end%>
+           
+        </div>
+        <div class="span8">
+         <button class="btn btn-primary"> <%= link_to "Create Subject",new_subject_path%> </button>
+>>>>>>> f0137e60bf79cbedc6813512861e727f9280c391
           </div>
     </div>
   </div>
