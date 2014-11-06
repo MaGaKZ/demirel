@@ -4,7 +4,7 @@
 <div id="profile">
   <div class="row">
     <div class="span6">
-      <%= gravatar_for @user,class:"img-circle"%>
+      <%= image_tag @user.avatar.url%> 
       <h3><%= @subject.name %></h3>
       <%if current_user.id == @user.id%>
       <button class="btn btn-info"><%= link_to "Marks",subject_marks_path(@subject)%></button>
@@ -35,6 +35,7 @@
     <% @assignments.each do |assignment| %>
       <tr>
         <td><%= link_to assignment.content,assignment_path(assignment) %></td>
+        <td><%= link_to 'New Comment', new_assignment_comment_path(assignment) %></td>
         <td><%= assignment.created_at.to_formatted_s(:short)  %></td>
         <%if current_user.id == @user.id%>
         <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
@@ -47,7 +48,7 @@
 
 <br><%if current_user.id == @user.id%>
     <button class="btn btn-info">
-<%= link_to 'New Assignment', new_subject_assignment_path(@subject),style:"color:#fff;text-decoration:none" %>
+<%= link_to 'New Assignment', new_subject_assignment_path(@subject) %>
       </button>
      <%end%>
 </div>

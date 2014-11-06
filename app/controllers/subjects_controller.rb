@@ -22,12 +22,16 @@ class SubjectsController < ApplicationController
   # GET /subjects/1/edit
   def edit
   end
+  
+  
 
   # POST /subjects
   # POST /subjects.json
   def create
     @subject = current_user.group.subjects.new(subject_params)
-    @subject.user_id = current_user.id
+    if @subject.user_id==nil
+     @subject.user_id = current_user.id
+    end
     respond_to do |format|
       if @subject.save
         format.html { redirect_to @subject, notice: 'Subject was successfully created.' }

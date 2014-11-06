@@ -4,7 +4,8 @@ class AssignmentsController < ApplicationController
   # GET /assignments
   # GET /assignments.json
   def index
-    @assignments = Assignment.all
+    @subject = Subject.find(params[:subject_id])
+    @assignments = @subject.assignments
   end
 
   # GET /assignments/1

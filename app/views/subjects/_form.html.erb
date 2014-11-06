@@ -19,7 +19,6 @@
      <%= f.collection_select(:group_id,Group.all,:id,:name,{:prompt => "Select Group"}, {:include_blank => true})%>
  
 <% if current_user && current_user.admin?%>
-
   <%= f.label :user_id %><br>
   <%= f.collection_select(:user_id,User.where(:teacher =>true),:id,:name,{:prompt => "Select Teacher"}, {:include_blank => true})%>
 
