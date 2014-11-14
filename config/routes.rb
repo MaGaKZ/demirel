@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     resources :marks, shallow: true
   end
   match '/help',    to: 'static_pages#help',    via: 'get'
-  match '/subject_assignments',    to: 'static_pages#subject_assignments',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
   resources :users
