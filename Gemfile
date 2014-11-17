@@ -38,11 +38,11 @@ group :production do
 end
 # Use unicorn as the app server
  gem 'unicorn'
-gem 'capistrano', '~> 3.1.0'
-gem 'capistrano-bundler'
-gem 'capistrano-rbenv', "~> 2.0" 
-# Use Capistrano for deployment
- gem 'capistrano-rails', '~> 1.1.0' ,group: :development
+
+group :development do
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv', '~> 2.0', require: false
+end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
