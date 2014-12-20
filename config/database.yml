@@ -21,8 +21,8 @@ test:
   database: db/test.sqlite3
 
 production:
-  database: rails_production
-  adapter: postgresql
+  database: demirel_production
+  adapter: sqlite3
   encoding: unicode
   pool: 5
   username: magzhan
