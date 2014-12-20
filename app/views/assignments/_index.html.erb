@@ -1,0 +1,18 @@
+<ol>
+    <% @assignments.each do |assignment| %>
+      <li>
+     <span class="content"> 
+       <%= assignment.content %>
+     </span>
+     <span class="timestamp">
+      Posted <%= time_ago_in_words(assignment.created_at) %> ago.
+     </span>
+       
+        
+      </li>
+        
+    <% end %>
+</ol>
+<br>
+
+<%= link_to 'New Assignment', new_subject_assignment_path %>

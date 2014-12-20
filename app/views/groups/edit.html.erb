@@ -1,0 +1,19 @@
+<h1>Editing group</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@group) do |f| %>
+<%= render 'shared/error_messages_group' %>
+      <%= f.label :course %>
+      <%= f.text_field :course %>
+    
+      <%= f.label :faculty %>
+      <%= f.text_field :faculty %>
+    
+    <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to 'Show', @group %> |
+<%= link_to 'Back', groups_path %>

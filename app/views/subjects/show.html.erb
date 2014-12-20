@@ -1,0 +1,56 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+  <% provide(:title, @subject.name) %>
+<div id="profile">
+  <div class="row">
+    <div class="span6">
+      <%= image_tag @user.avatar.url%> 
+      <h3><%= @subject.name %></h3>
+      <%if current_user.id == @user.id%>
+      <button class="btn btn-info"><%= link_to "Marks",subject_marks_path(@subject)%></button>
+       <%end%>
+    </div>
+    <div class="span2">
+      <h4><%=@user.name%> <%=@user.surname%></h4>
+      <p>Teacher name</p>
+    </div>
+     <div class="span2">
+       <h4><%=@subject.group.users.count%></h4>
+      <p>Number of students</p>
+    </div>
+     <div class="span2">
+       <h4><%=@assignments.count%></h4>
+      <p>Homeworks</p>
+    </div>
+  </div>
+  </div>
+
+<div class="homeworks">
+  <div class="row">
+<h3>Homeworks</h3>
+
+<table class="table table-hover">
+ 
+  <tbody>
+    <% @assignments.each do |assignment| %>
+      <tr>
+        <td><%= link_to assignment.content,assignment_path(assignment) %></td>
+        <td><%= link_to 'New Comment', new_assignment_comment_path(assignment) %></td>
+        <td><%= assignment.created_at.to_formatted_s(:short)  %></td>
+        <%if current_user.id == @user.id%>
+        <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
+        <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br><%if current_user.id == @user.id%>
+    <button class="btn btn-info">
+<%= link_to 'New Assignment', new_subject_assignment_path(@subject) %>
+      </button>
+     <%end%>
+</div>
+  </div>
+</div>
