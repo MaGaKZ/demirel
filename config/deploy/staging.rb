@@ -13,13 +13,6 @@ role :db,  %w{deploy@example.com}
 # This can be used to drop a more detailed server
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
-<<<<<<< HEAD
-# extended properties on the server
-=======
-# extended properties on the server.
-server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
-
->>>>>>> 99e8b21045f8ceb154f9ad299d1ac6f76e7d0f2f
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
 # you can see them in [net/ssh documentation](http://net-ssh.github.io/net-ssh/classes/Net/SSH.html#method-c-start)
