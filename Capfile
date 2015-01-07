@@ -6,11 +6,6 @@ require 'capistrano/deploy'
 
 # Includes tasks from other gems included in your Gemfile
 #
-<<<<<<< HEAD
-# For documsentation on these, see for example:
-=======
-# For documentation on these, see for example:
->>>>>>> 99e8b21045f8ceb154f9ad299d1ac6f76e7d0f2f
 #
 #   https://github.com/capistrano/rvm
 #   https://github.com/capistrano/rbenv

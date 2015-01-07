@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 set :application, 'demirel'
 set :repo_url, 'git@github.com:magakz/demirel.git'
 set :scm, :git
@@ -20,9 +20,8 @@ namespace :deploy do
   after :publishing, 'deploy:restart'
   after :finishing, 'deploy:cleanup'
 end
-=======
 # config valid only for Capistrano 3.1
-lock '3.1.0'
+lock '3.3.5'
 
 set :application, 'demirel'
 set :repo_url, 'git@github.com:magakz/demirel.git'
@@ -80,4 +79,3 @@ namespace :deploy do
   end
 
 end
->>>>>>> 99e8b21045f8ceb154f9ad299d1ac6f76e7d0f2f

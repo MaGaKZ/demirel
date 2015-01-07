@@ -184,5 +184,30 @@ ol{
 }
 .list-group a:first-child{
   margin-right: 0px;
-
+}
+.comments{
+  margin-left: 40px;
+}
+.renders .content{
+  font-size: 23px;
+  font-weight: 300;
+}
+.comments li{
+  font-weight: normal;
+}
+.comments a{
+  margin-left: 24px;
+  font-size: 14px;
+  font-weight: normal;
+}
+.renders h4{
+  font-weight: 200;
+}
+.renders{
+  padding: 25px;
+  border: 1px solid;
+  border-radius: 6px;
+}
+.span8{
+  margin-left: 30px;
 }

@@ -1,18 +1,31 @@
 <ol>
     <% @assignments.each do |assignment| %>
       <li>
-     <span class="content"> 
-       <%= assignment.content %>
-     </span>
-     <span class="timestamp">
-      Posted <%= time_ago_in_words(assignment.created_at) %> ago.
-     </span>
-       
-        
-      </li>
-        
+          <span class="content"> 
+          <%= assignment.content %>
+          </span>
+          <span class="timestamp">
+            Posted <%= time_ago_in_words(assignment.created_at) %> ago.
+          </span>
+              <div class="comments">
+                <h4>Comments</h4>
+           
+                <%assignment.comments.each do |comment|%>
+                <ol> 
+                    <li>                            
+                   <span class="timestamp name">
+                    <%@user=User.find(comment.user_id)%>
+                    <%=@user.name%> <%= @user.surname%> |
+                  </span>               
+                    <%=comment.content%> 
+                    </li>
+                </ol>
+                <%end%>
+               
+                <%= link_to 'New Comment', new_assignment_comment_path(assignment) %>
+                </div>
+      </li>       
     <% end %>
 </ol>
-<br>
 
 <%= link_to 'New Assignment', new_subject_assignment_path %>
