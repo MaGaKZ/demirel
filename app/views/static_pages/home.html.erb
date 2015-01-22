@@ -39,16 +39,15 @@
            <div class="list-group">
              <%= link_to subject_assignments_path(s), class: "list-group-item",remote: true do %>
              <div class="subname">
-               <%= s.name %>
-             </div>       
-              <%end%>
+               <div class="cursor" style="cursor: pointer;" onclick="window.location='<%=subject_path(s)%>';"><%=s.name%></div> 
+             </div>  
+              <%end%>             
            </div>  
            <%end%>
         </div>
         <div class="span8">
          <div class="renders">        
-          </div>
-        
+          </div>       
     </div>
   </div>
     

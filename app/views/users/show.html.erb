@@ -1,13 +1,28 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <div class="col-md-4">
-    <%=image_tag @user.avatar.url, class: "img-circle",alt:@user.name %>
-   Name:    <%= @user.name %>
-    <br/>
-   Surname:     <%= @user.surname %>
-     <br/>
-  Email:    <%= @user.email %>
-     <br/>
-  Group Id:   <%= @user.group_id %>
+  <div class="span6">
+    <%=image_tag @user.avatar.url,alt:@user.name %>
+  <%= @user.name %>
+      <%= @user.surname %>
+     <%= @user.email %>
+  </div>
+  <div class="span6">
+  <table>
+      <th>
+           <%@user.marks.each do |mark|%>
+       
+        <%@subject=Subject.find(mark.subject_id)%>
+        <td><%=@subject.name%></td>
+        
+      <%end%>
+      </th>
+      
+      <tr>        
+      <%@user.marks.each do |mark|%>
+     <td><%=mark.value%></td>
+      <%end%>
+     </tr>
+         
+  </table>
   </div>
 </div>

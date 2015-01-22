@@ -129,6 +129,9 @@ tr a{
  font-weight: lighter;
  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;   
 }
+.list-group{
+  height: 47px;
+}
 .list-group-item:first-child {
 border-top-left-radius: 4px;
 border-top-right-radius: 4px;
@@ -151,15 +154,6 @@ z-index: 2;
 color: #fff;
 background-color: #428bca;
 border-color: #428bca;
-}
-.icon-chevron-right{
-  float:right;
-  margin-right:10px;
-  margin-top:6px;
-  border-radius:20px;
-}
-.icon-chevron-right:hover{
-  background-color:#474747;
 }
 #profile .span6 .gravatar {
   margin-top:20px;
@@ -210,4 +204,12 @@ ol{
 }
 .span8{
   margin-left: 30px;
+}
+.icon-arrow-right{
+  position:relative;
+  top:-35px;
+  left:267px;
+}
+.cursor:hover{
+  text-decoration: underline;
 }

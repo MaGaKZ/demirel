@@ -4,9 +4,12 @@
   <div class="span6 offset3">
     <%= form_for(@group) do |f| %>
 <%= render 'shared/error_messages_group' %>
+       <%= f.label :name %>
+     	<%= f.text_field :name %>
+
       <%= f.label :course %>
       <%= f.text_field :course %>
-    
+    	
       <%= f.label :faculty %>
       <%= f.text_field :faculty %>
     
