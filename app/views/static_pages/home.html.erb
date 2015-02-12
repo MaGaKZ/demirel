@@ -18,8 +18,14 @@
     <p>quantity of subjects</p>
      </div>
    <div class="span2">
-     <h4>NULL</h4>
-     <p>Average marks</p>
+   <%if current_user.teacher?%>
+     <h4>Teacher</h4>
+     <%elsif current_user.admin?%>
+     <h4>Admin</h4>
+     <%else%>
+     <h4>Student</h4>
+     <%end%>
+     <p>status</p>
    </div>
    </div>  
   </div>
@@ -33,18 +39,35 @@
             <h3>Assignments</h3>
           </div>       
         </div>
-      <div class="span4">          
+      <div class="span4">  
+             <%if !current_user.teacher?%>
       <% current_user.group.subjects.each do |s|%>
     
            <div class="list-group">
              <%= link_to subject_assignments_path(s), class: "list-group-item",remote: true do %>
              <div class="subname">
-               <div class="cursor" style="cursor: pointer;" onclick="window.location='<%=subject_path(s)%>';"><%=s.name%></div> 
+               <div class="cursor" style="cursor: pointer;" onclick="window.location='<%=subject_path(s)%>';">
+               <%=s.name%></div> 
              </div>  
               <%end%>             
            </div>  
            <%end%>
-        </div>
+           <%else%>
+
+           <% Subject.where(:user_id=>current_user.id).each do |s|%>
+    
+           <div class="list-group">
+             <%= link_to subject_assignments_path(s), class: "list-group-item",remote: true do %>
+             <div class="subname">
+               <div class="cursor" style="cursor: pointer;" onclick="window.location='<%=subject_path(s)%>';">
+               <%=s.name%></div> 
+             </div>  
+              <%end%>             
+           </div>  
+           <%end%>
+
+           <%end%>
+        </div>       
         <div class="span8">
          <div class="renders">        
           </div>       

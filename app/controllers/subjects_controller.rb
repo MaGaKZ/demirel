@@ -28,7 +28,7 @@ class SubjectsController < ApplicationController
   # POST /subjects
   # POST /subjects.json
   def create
-    @subject = current_user.group.subjects.new(subject_params)
+    @subject =Subject.new(subject_params)
     if @subject.user_id==nil
      @subject.user_id = current_user.id
     end

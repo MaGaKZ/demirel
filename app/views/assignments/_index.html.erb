@@ -3,6 +3,10 @@
       <li>
           <span class="content"> 
           <%= assignment.content %>
+          <%if assignment.attachment.present?%>
+          <br>
+           <a href="<%=  assignment.attachment.url %> "> <%=assignment.attachment_file_name%></a>
+            <%end%>
           </span>
           <span class="timestamp">
             Posted <%= time_ago_in_words(assignment.created_at) %> ago.
