@@ -7,22 +7,13 @@
      <%= @user.email %>
   </div>
   <div class="span6">
-  <table>
-      <th>
+  
            <%@user.marks.each do |mark|%>
-       
-        <%@subject=Subject.find(mark.subject_id)%>
-        <td><%=@subject.name%></td>
-        
-      <%end%>
-      </th>
-      
-      <tr>        
-      <%@user.marks.each do |mark|%>
-     <td><%=mark.value%></td>
-      <%end%>
-     </tr>
-         
-  </table>
-  </div>
+                <%@subject=Subject.find(mark.subject_id)%>
+           <%=@subject.name%>
+           <%=mark.value%> 
+            <%end%>
+            <br>
+          
+    </div>
 </div>

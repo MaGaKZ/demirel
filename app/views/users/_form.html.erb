@@ -20,7 +20,9 @@
 
       <label for="person_group_id">Group:</label>
       <%= f.collection_select(:group_id,Group.all,:id,:name,{:prompt => "Select Group"}, {:include_blank => true})%>
-      
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+      <%= f.file_field :avatar%>
+      <br>
+    <% if current_user.admin?%>
+      <%= f.submit "Create account", class: "btn btn-large btn-primary" %>
     <% end %>
- 
+ <% end %>  
