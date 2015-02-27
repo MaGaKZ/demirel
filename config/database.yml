@@ -23,7 +23,7 @@ test:
 production:
   database: rails_production
   encoding: utf8
-  adapter: sqlite3
+  adapter: postgresql
   pool: 5
   host: localhost
   username: root  
