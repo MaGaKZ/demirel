@@ -1,0 +1,173 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'csslint' ]
+2 info using npm@2.5.1
+3 info using node@v0.12.1
+4 silly cache add args [ 'csslint', null ]
+5 verbose cache add spec csslint
+6 silly cache add parsed spec { raw: 'csslint',
+6 silly cache add   scope: null,
+6 silly cache add   name: 'csslint',
+6 silly cache add   rawSpec: '',
+6 silly cache add   spec: '*',
+6 silly cache add   type: 'range' }
+7 verbose addNamed csslint@*
+8 silly addNamed semver.valid null
+9 silly addNamed semver.validRange *
+10 silly addNameRange { name: 'csslint', range: '*', hasData: false }
+11 silly mapToRegistry name csslint
+12 silly mapToRegistry using default registry
+13 silly mapToRegistry registry https://registry.npmjs.org/
+14 silly mapToRegistry uri https://registry.npmjs.org/csslint
+15 verbose addNameRange registry:https://registry.npmjs.org/csslint not in flight; fetching
+16 verbose request uri https://registry.npmjs.org/csslint
+17 verbose request no auth needed
+18 info attempt registry request try #1 at 7:54:13 PM
+19 verbose request id 8cfceafbbdf81bd2
+20 http request GET https://registry.npmjs.org/csslint
+21 http 200 https://registry.npmjs.org/csslint
+22 silly get cb [ 200,
+22 silly get   { date: 'Sat, 28 Mar 2015 13:54:14 GMT',
+22 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+22 silly get     etag: '"5NC9VXLYPRSRW4T3Q12WUNST8"',
+22 silly get     'content-type': 'application/json',
+22 silly get     'cache-control': 'max-age=60',
+22 silly get     'content-length': '23276',
+22 silly get     'accept-ranges': 'bytes',
+22 silly get     via: '1.1 varnish',
+22 silly get     age: '0',
+22 silly get     'x-served-by': 'cache-fra1236-FRA',
+22 silly get     'x-cache': 'HIT',
+22 silly get     'x-cache-hits': '1',
+22 silly get     'x-timer': 'S1427550853.845554,VS0,VE421',
+22 silly get     vary: 'Accept',
+22 silly get     'keep-alive': 'timeout=10, max=50',
+22 silly get     connection: 'Keep-Alive' } ]
+23 verbose get saving csslint to /Users/Shokparbayev/.npm/registry.npmjs.org/csslint/.cache.json
+24 verbose getCacheStat cache creation not in flight; initializing
+25 silly addNameRange number 2 { name: 'csslint', range: '*', hasData: true }
+26 silly addNameRange versions [ 'csslint',
+26 silly addNameRange   [ '0.1.0',
+26 silly addNameRange     '0.2.0',
+26 silly addNameRange     '0.3.0',
+26 silly addNameRange     '0.3.1',
+26 silly addNameRange     '0.3.2',
+26 silly addNameRange     '0.4.0',
+26 silly addNameRange     '0.5.0',
+26 silly addNameRange     '0.6.0',
+26 silly addNameRange     '0.6.1',
+26 silly addNameRange     '0.7.0',
+26 silly addNameRange     '0.8.0',
+26 silly addNameRange     '0.8.1',
+26 silly addNameRange     '0.8.5',
+26 silly addNameRange     '0.9.0',
+26 silly addNameRange     '0.9.1',
+26 silly addNameRange     '0.9.2',
+26 silly addNameRange     '0.9.5',
+26 silly addNameRange     '0.9.6',
+26 silly addNameRange     '0.9.7',
+26 silly addNameRange     '0.9.8',
+26 silly addNameRange     '0.9.9',
+26 silly addNameRange     '0.9.10',
+26 silly addNameRange     '0.10.0' ] ]
+27 verbose addNamed csslint@0.10.0
+28 silly addNamed semver.valid 0.10.0
+29 silly addNamed semver.validRange 0.10.0
+30 silly mapToRegistry name csslint
+31 silly mapToRegistry using default registry
+32 silly mapToRegistry registry https://registry.npmjs.org/
+33 silly mapToRegistry uri https://registry.npmjs.org/csslint
+34 verbose addRemoteTarball https://registry.npmjs.org/csslint/-/csslint-0.10.0.tgz not in flight; adding
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/csslint/-/csslint-0.10.0.tgz',
+35 verbose addRemoteTarball   '3a6a04e7565c8e9d19beb49767c7ec96e8365805' ]
+36 info retry fetch attempt 1 at 7:54:14 PM
+37 info attempt registry request try #1 at 7:54:14 PM
+38 http fetch GET https://registry.npmjs.org/csslint/-/csslint-0.10.0.tgz
+39 http fetch 200 https://registry.npmjs.org/csslint/-/csslint-0.10.0.tgz
+40 silly fetchAndShaCheck shasum 3a6a04e7565c8e9d19beb49767c7ec96e8365805
+41 verbose addTmpTarball /var/folders/jb/wvwt3ssx3ks0cqvqsp4ln8c80000gn/T/npm-1280-0c79391e/registry.npmjs.org/csslint/-/csslint-0.10.0.tgz not in flight; adding
+42 verbose addTmpTarball already have metadata; skipping unpack for csslint@0.10.0
+43 silly cache afterAdd csslint@0.10.0
+44 verbose afterAdd /Users/Shokparbayev/.npm/csslint/0.10.0/package/package.json not in flight; writing
+45 verbose afterAdd /Users/Shokparbayev/.npm/csslint/0.10.0/package/package.json written
+46 silly install resolved [ { name: 'csslint',
+46 silly install resolved     version: '0.10.0',
+46 silly install resolved     description: 'CSSLint',
+46 silly install resolved     author: { name: 'Nicole Sullivan' },
+46 silly install resolved     contributors: [ [Object] ],
+46 silly install resolved     engines: { node: '>=0.8.0' },
+46 silly install resolved     directories: { lib: 'lib' },
+46 silly install resolved     main: './lib/csslint-node.js',
+46 silly install resolved     bin: { csslint: './cli.js' },
+46 silly install resolved     scripts: { test: 'grunt test' },
+46 silly install resolved     licenses: [ [Object] ],
+46 silly install resolved     bugs: { url: 'https://github.com/stubbornella/csslint/issues' },
+46 silly install resolved     repository:
+46 silly install resolved      { type: 'git',
+46 silly install resolved        url: 'https://github.com/stubbornella/csslint.git' },
+46 silly install resolved     dependencies: { parserlib: '~0.2.2' },
+46 silly install resolved     devDependencies:
+46 silly install resolved      { grunt: '~0.4.1',
+46 silly install resolved        'grunt-contrib-jshint': '~0.5.4',
+46 silly install resolved        'grunt-contrib-concat': '~0.3.0',
+46 silly install resolved        'grunt-contrib-watch': '~0.4.4',
+46 silly install resolved        yuitest: '~0.7.9',
+46 silly install resolved        'grunt-contrib-clean': '~0.4.1',
+46 silly install resolved        'grunt-contrib-copy': '~0.4.1',
+46 silly install resolved        'grunt-include-replace': '~0.4.0' },
+46 silly install resolved     _id: 'csslint@0.10.0',
+46 silly install resolved     dist:
+46 silly install resolved      { shasum: '3a6a04e7565c8e9d19beb49767c7ec96e8365805',
+46 silly install resolved        tarball: 'http://registry.npmjs.org/csslint/-/csslint-0.10.0.tgz' },
+46 silly install resolved     _from: 'csslint@*',
+46 silly install resolved     _npmVersion: '1.2.32',
+46 silly install resolved     _npmUser: { name: 'stubbornella', email: 'nicole@stubbornella.org' },
+46 silly install resolved     maintainers: [ [Object], [Object] ],
+46 silly install resolved     _shasum: '3a6a04e7565c8e9d19beb49767c7ec96e8365805',
+46 silly install resolved     _resolved: 'https://registry.npmjs.org/csslint/-/csslint-0.10.0.tgz' } ]
+47 info install csslint@0.10.0 into /usr/local/lib
+48 info installOne csslint@0.10.0
+49 verbose installOne of csslint to /usr/local/lib not in flight; installing
+50 verbose lock using /Users/Shokparbayev/.npm/_locks/csslint-18f2e779514c039c.lock for /usr/local/lib/node_modules/csslint
+51 silly install write writing csslint 0.10.0 to /usr/local/lib/node_modules/csslint
+52 silly cache addNamed cb csslint@0.10.0
+53 verbose unbuild lib/node_modules/csslint
+54 verbose gentlyRm vacuuming /usr/local/lib/node_modules/csslint
+55 verbose tar unpack /Users/Shokparbayev/.npm/csslint/0.10.0/package.tgz
+56 verbose tar unpacking to /usr/local/lib/node_modules/csslint
+57 verbose gentlyRm vacuuming /usr/local/lib/node_modules/csslint
+58 silly gunzTarPerm modes [ '755', '644' ]
+59 error tar.unpack untar error /Users/Shokparbayev/.npm/csslint/0.10.0/package.tgz
+60 verbose unlock done using /Users/Shokparbayev/.npm/_locks/csslint-18f2e779514c039c.lock for /usr/local/lib/node_modules/csslint
+61 verbose fstream_path /usr/local/lib/node_modules/csslint
+62 verbose fstream_type Directory
+63 verbose fstream_class DirWriter
+64 verbose stack Error: EACCES, mkdir '/usr/local/lib/node_modules/csslint'
+64 verbose stack     at Error (native)
+65 verbose fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+65 verbose fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+65 verbose fstream_stack FSReqWrap.oncomplete (fs.js:99:15)
+66 verbose cwd /Users/Shokparbayev/Downloads/demirel-master
+67 error Darwin 14.1.0
+68 error argv "node" "/usr/local/bin/npm" "install" "-g" "csslint"
+69 error node v0.12.1
+70 error npm  v2.5.1
+71 error path /usr/local/lib/node_modules/csslint
+72 error code EACCES
+73 error errno -13
+74 error Error: EACCES, mkdir '/usr/local/lib/node_modules/csslint'
+74 error     at Error (native)
+74 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/csslint']
+74 error   errno: -13,
+74 error   code: 'EACCES',
+74 error   path: '/usr/local/lib/node_modules/csslint',
+74 error   fstream_type: 'Directory',
+74 error   fstream_path: '/usr/local/lib/node_modules/csslint',
+74 error   fstream_class: 'DirWriter',
+74 error   fstream_stack:
+74 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+74 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+74 error      'FSReqWrap.oncomplete (fs.js:99:15)' ] }
+75 error Please try running this command again as root/Administrator.
+76 verbose exit [ -13, true ]
+77 verbose unbuild lib/node_modules/csslint
+78 verbose gentlyRm vacuuming /usr/local/lib/node_modules/csslint

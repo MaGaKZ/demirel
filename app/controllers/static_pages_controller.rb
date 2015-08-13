@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
     @user=User.new
+    @news = News.all
   end
   
   def subject_assignments
@@ -14,5 +15,8 @@ class StaticPagesController < ApplicationController
   end
   
   def contact
+  end
+  def admission
+    
   end
 end

@@ -1,18 +1,135 @@
 <%@titles=@user.name+" "+@user.surname%>
 <% provide(:title,@titles) %>
-<div class="row">
-  <div class="span6">
-    <%=image_tag @user.avatar.url,alt:@user.name %>
-    <h4><%=@user.name+" "+@user.surname%></h4>
-    <hr>
-    <p style="margin-top: -15px;">Contact information:</p>
-    <hr>
-    <h5 style="font-weight:lighter">mail: <%=@user.email%></h5>
-    <hr>
-    <h5 style="font-weight:lighter">group: <%=@user.group.name%></h5>
-    <hr style="float: left;width: 460px;margin-top: 20px;">
+<div class="container">
+  <div class="breadcumb">
+    <li><%=link_to "Home",root_path%> | My profile</li>
   </div>
-  <div class="span6">
-  
+  <div class="row">
+    <div class="span12">
+      
+      
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#sectionA">Overview</a></li>
+        <li><a data-toggle="tab" href="#sectionB">Edit account</a></li>
+      </ul>
+      <div class="tab-content">
+        <div id="sectionA" class="tab-pane fade in active">
+          <div class="row">
+            <div class="span4">
+              <div class="center">
+                <h4><%=@user.name+" "+@user.surname%></h4>
+                <%=image_tag @user.avatar.url,alt:@user.name,id:"avatar" %>
+              </div>
+              <hr>
+              
+              <table class="table">
+                <thead>
+                  <tr>
+                    <p>General Information</p>
+                  </tr>
+                </thead>
+                <body>
+                 <tr>
+                    <td>Name:</td>
+                    <td><%=@user.group.name%></td>
+                  </tr>
+                  <tr>
+                    <td>Course:</td>
+                    <td><%=@user.group.course%></td>
+                  </tr>
+                  <tr>
+                    <td>Faculty</td>
+                    <td><%=@user.group.faculty%></td>
+                  </tr>
+                  
+                  <tr>
+                    <td>Status</td>
+                    <%if current_user.admin?%>
+                    <td><button class="btn btn-danger disabled">Admin</button></td>
+                    <%elsif current_user.teacher?%>
+                    <td><button class="btn btn-warning disabled">Teacher</button></td>
+                    <%else%>
+                     <td><button class="btn btn-info disabled">Student</button></td>
+                    <%end%>
+
+                  </tr>
+                </body>
+              </table>
+              
+              <table class="table">
+                <thead>
+                  <tr>
+                    <p>Contact Information</p>
+                  </tr>
+                </thead>
+                <body>
+                  <tr>
+                    <td>email:</td>
+                    <td><%=@user.email%></td>
+                  </tr>
+                  <tr>
+                    <td>phone</td>
+                    <td>(641)-734-4763</td>
+                  </tr>
+                  <tr>
+                    <td>skype</td>
+                    <td>www.exampple.com</td>
+                  </tr>
+                  <tr>
+                    <td>vk</td>
+                    <td>www.exampple.com</td>
+                  </tr>
+                </body>
+              </table>
+            </div>
+            <div class="span8">
+              <div class="activities">
+                <div class="panel-title">
+                  <h4>My Grades</h4>
+                </div>
+                <div class="panel-body">
+                  <ul class="timeline">
+                    <li class="margin-left-15 ">
+                      <div class="text-small">
+                        2 minutes ago
+                      </div>
+                      <p><%=@user.name%> got 5 on math.</p>
+                    </li>
+                    <li class="margin-left-15 ">
+                      <div class="text-small">
+                        55 minutes ago
+                      </div>
+                      <p><%=@user.name%> got 4 on physics.</p>
+                    </li>
+                    <li class="margin-left-15 ">
+                      <div class="text-small">
+                        1 hour 43 minutes ago
+                      </div>
+                      <p><%=@user.name%> got 3 on arduino.</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="sectionB" class="tab-pane fade">
+          <div class="tab-panel">
+            <div class="legend">Account info</div>
+            <div class="row">
+              <div class="span4">
+                <%= render 'form'%>
+                
+              </div>
+              <div class="span4">
+               <div class="center">
+                <%=image_tag @user.avatar.url,alt:@user.name,id:"uploadPreview" %>
+              </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  

@@ -18,6 +18,14 @@ class MarksController < ApplicationController
       render 'new'
     end
   end
+  def destroy
+    @mark = Mark.find(params[:subject_id])
+    @mark.destroy
+    respond_to do |format|
+      format.html { redirect_to :back, notice: 'Mark was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
   private
    def mark_params
      params.require(:mark).permit(:value,:user_id,:subject_id)

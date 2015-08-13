@@ -1,0 +1,50 @@
+<% provide(:title, 'News') %>
+<div class="container news">
+  <div class="breadcumb">
+    <li><%=link_to "Home",root_path%> | News</li>
+  </div>
+  <div class="row title-widget">
+    <div class="span8 ">
+      <div class="slide-wrap">
+        <h2>News</h2>
+        <hr id="hrnews">
+      </div>
+      <div class="news-summary">
+        <% @news.each do |news| %>
+        <%=image_tag news.photo.url%>
+        <h2 class="title"><%= news.title %></h2>
+        <%= news.content %>
+        <br>
+        <%if signed_in? && current_user.admin?%>
+        <td><%= link_to 'Edit', edit_news_path(news) %></td> |
+        <td><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
+      </tr>
+      <% end %>
+    </div>
+  </div>
+  <div class="span4">
+    <div class="slide-wrap">
+      <h3>Useful links</h3>
+      <ul class="widget_nav_menu">
+        <li>
+          <a href="">News Archive</a>
+        </li>
+        <li>
+          <a href="">Tradition of School Events</a>
+        </li>
+        <li>
+          <a href="">Report Asocial Behaviour</a>
+        </li>
+        <li>
+          <a href="">Trends and Tips</a>
+        </li>
+        <li>
+          <a href="">Events Poll</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<br>
+</div>

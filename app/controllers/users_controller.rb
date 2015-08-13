@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :signed_in_user, only: [:edit, :update]
   before_action :correct_user,   only: [:edit, :update]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :admin_user,     only: :destroy
+  before_action :admin_user,     only: [:create,:destroy]
   # GET /users
   # GET /users.json
   def index
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
       flash[:success] = "Profile updated"
       redirect_to @user
     else
-      render 'edit'
+      render 'show'
     end
   end
 

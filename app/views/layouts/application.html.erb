@@ -3,22 +3,90 @@
   <head>
     <title><%= full_title(yield(:title)) %></title>
     <%= stylesheet_link_tag "application", media: "all",
-                                           "data-turbolinks-track" => true %>
+    "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
-  <body>
-     <%= render 'layouts/header' %>
-      <div class="container">
+  <link href="/assets/logo.jpg" rel="shortcut icon" type="image/x-icon" />
+  <body class="cbp-spmenu-push">
+    <%= render 'layouts/header' %>
+     <%if signed_in?%>
+      <%if current_user.admin?%>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+        <h3>ADMIN</h3>
+       <%= link_to "Create User",new_user_path%>
+        <%= link_to "Create Group",new_group_path%>
+        <%= link_to "Create Subject",new_subject_path%>
+         <%= link_to "Create News",new_news_path%>
+         
+    </nav>
+   
+    <button id="showLeftPush">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <%elsif current_user.teacher?%>
+                 <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+        <h3>Teacher</h3>
+        <%= link_to "Create Subject",new_subject_path%>
+         <%= link_to "Create News",new_news_path%>
+    </nav>
+   
+    <button id="showLeftPush">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+
+                </button>
+                <%else%>
+                 <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+        <h3>Student</h3>
+         <%= link_to "Help", help_path %>
+      <%= link_to "About", about_path %>
+    </nav>
+   
+    <button id="showLeftPush">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+
+                </button>
+                <%end%>
+                <%end%>
       <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
+      <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
-      <%= yield %>  
-        </div>
-      <%= render 'layouts/footer' %>
+      <%= yield %>
+    <%= render 'layouts/footer' %>
+    <script>
+    new WOW().init();
+    </script>
+     <script>
+    var menuLeft = document.getElementById('cbp-spmenu-s1'),
+        showLeftPush = document.getElementById('showLeftPush'),
+        body = document.body;
+
+
+    showLeftPush.onclick = function() {
+        classie.toggle(this, 'active');
+        classie.toggle(body, 'cbp-spmenu-push-toright');
+        classie.toggle(menuLeft, 'cbp-spmenu-open');
+        disableOther('showLeftPush');
+    };
+
+    function disableOther(button) {
+
+        if (button !== 'showLeftPush') {
+            classie.toggle(showLeftPush, 'disabled');
+        }
+    }
+    </script>
+    
   </body>
 </html>

@@ -1,94 +1,142 @@
 <div class="container">
-<% if signed_in? %>
-<% provide(:title, 'Home') %>
-<div id="profile">
- <div class="row">
-  <div class="span6">
-    <%= image_tag current_user.avatar.url%>   
-<h3><%= current_user.name %> <%=current_user.surname%></h3>
-   </div>
-  
-  <div class="span2">    
-      <h4><%=current_user.group.name%></h4>     
-       <p>Group ID</p>
+  <% if signed_in? %>
+  <% provide(:title, 'Home') %>
+  <div class="breadcumb">
+    <li><%=link_to "Home",root_path%> | homework page</li>
   </div>
-  
-  <div class="span2">   
-    <h4><%=current_user.group.subjects.count%></h4>
-    <p>quantity of subjects</p>
-     </div>
-   <div class="span2">
-   <%if current_user.teacher?%>
-     <h4>Teacher</h4>
-     <%elsif current_user.admin?%>
-     <h4>Admin</h4>
-     <%else%>
-     <h4>Student</h4>
-     <%end%>
-     <p>status</p>
-   </div>
-   </div>  
-  </div>
-    <div class="subjects">
+  <div class="subjects">
+    <div class="row">
       <div class="row">
-        <div class="row">
-          <div class="span6 hey">
-            <h3>My Subjects</h3>
-          </div> 
-          <div class="span6 hey">
-            <h3>Assignments</h3>
-          </div>       
+        <div class="span6 hey">
+          <h3>My Subjects</h3>
         </div>
-      <div class="span4">  
-             <%if !current_user.teacher?%>
-      <% current_user.group.subjects.each do |s|%>
-    
-           <div class="list-group">
-             <%= link_to subject_assignments_path(s), class: "list-group-item",remote: true do %>
-             <div class="subname">
-               <div class="cursor" style="cursor: pointer;" onclick="window.location='<%=subject_path(s)%>';">
-               <%=s.name%></div> 
-             </div>  
-              <%end%>             
-           </div>  
-           <%end%>
-           <%else%>
-
-           <% Subject.where(:user_id=>current_user.id).each do |s|%>
-    
-           <div class="list-group">
-             <%= link_to subject_assignments_path(s), class: "list-group-item",remote: true do %>
-             <div class="subname">
-               <div class="cursor" style="cursor: pointer;" onclick="window.location='<%=subject_path(s)%>';">
-               <%=s.name%></div> 
-             </div>  
-              <%end%>             
-           </div>  
-           <%end%>
-
-           <%end%>
-        </div>       
-        <div class="span8">
-         <div class="renders">        
-          </div>       
+        <div class="span6 hey">
+          <h3>Homeworks</h3>
+        </div>
+      </div>
+      <div class="span4">
+        <%if !current_user.teacher?%>
+        <% current_user.group.subjects.each do |s|%>
+        
+        <div class="list-group">
+          <%= link_to subject_assignments_path(s), class: "list-group-item",remote: true do %>
+          <div class="subname">
+            <div class="cursor" style="cursor: pointer;" onclick="window.location='<%=subject_path(s)%>';">
+            <%=s.name%></div>
+          </div>
+          <%end%>
+        </div>
+        <%end%>
+        <%else%>
+        <% Subject.where(:user_id=>current_user.id).each do |s|%>
+        
+        <div class="list-group">
+          <%= link_to subject_assignments_path(s), class: "list-group-item",remote: true do %>
+          <div class="subname">
+            <div class="cursor" style="cursor: pointer;" onclick="window.location='<%=subject_path(s)%>';">
+            <%=s.name%></div>
+          </div>
+          <%end%>
+        </div>
+        <%end%>
+        
+        <%end%>
+      </div>
+      <div class="span8">
+        <div class="renders">
+        </div>
+      </div>
     </div>
   </div>
-    
+</div>
 <%else%>
-  
-  
-<div class="row">
-    <div class="jumbotron">
-	      <div class="span8">
-      <div class="container">
-        <h1>Suleyman Demirel College</h1>
-       <img src="/assets/image.jpg"id="logo" />
+<div class="breadcumb">
+  <li><%=link_to "Home",root_path%> | main page</li>
+  <h3>Suleyman Demirel College</h3>
+</div>
+<div id="myCarousel" class="carousel slide">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <div class="active item"><%= image_tag("sdcollege.jpg", :alt => "slider image 1") %>
+      <div class="slidetext">
+        <div class="slide-wrap">
+          <h3>Learning makes us stronger for life</h3>
+          <p>We could brag about all of the great opportunities that our students have... or you could hear it from the students themselves.</p>
+        </div>
       </div>
-    </div> 
- 
-          <div class="span4">
-          </div>
+    </div>
+    <div class="item"><%= image_tag("sdcollege.jpg", :alt => "slider image 2") %>
+      <div class="slidetext">
+        <div class="slide-wrap">
+          <h3>Learning makes us stronger for life</h3>
+          <p>We could brag about all of the great opportunities that our students have... or you could hear it from the students themselves.</p>
+        </div>
       </div>
+    </div>
+    <div class="item"><%= image_tag("sdcollege.jpg", :alt => "slider image 3") %>
+      <div class="slidetext">
+        <div class="slide-wrap">
+          <h3>Learning makes us stronger for life</h3>
+          <p>We could brag about all of the great opportunities that our students have... or you could hear it from the students themselves.</p>
+        </div>
+      </div>
+    </div>
   </div>
+  <!-- Carousel nav -->
+</div>
+<div class="row title-widget">
+  <div class="span6">
+    <div class="slide-wrap">
+      <h3>NEWS AND EVENTS</h3>
+      <div class="news-summary">
+        <% @news.each do |news| %>
+        <%=image_tag news.photo.url%>
+        <h2 class="title"><%= news.title %></h2>
+        <p><%= news.content %></p>
+        <br>
+        
+        <% end %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="span6">
+    <div class="slide-wrap">
+      <h3>Admission</h3>
+      <ul>
+        <li>
+        <a class="custom-button">
+        <i class="icon-ok"></i>
+          <span class="custom-button-title">How to apply?</span>
+          <span class="custom-button-tagline">Join us whenewer you feel it’s time!</span>
+        </a>
+        </li>
+        <li>
+        <a href="" class="custom-button cb-gray">
+          <i class="icon-share-alt"></i>
+          <span class="custom-button-title">Campus tour</span>
+          <span class="custom-button-tagline">Student's life at the glance. Take a tour...</span>
+        </a>
+        </li>
+        <li>
+        <a href="" class="custom-button cb-yellow">
+          <i class="icon-leaf"></i>
+          <span class="custom-button-title">Prospectus</span>
+          <span class="custom-button-tagline">Request a free School Prospectus!</span>
+        </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+$('.carousel').carousel({
+interval: 3500
+})
+</script>
 <%end%>
-  </div>

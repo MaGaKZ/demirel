@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_group, only: :show
+  before_action :admin_user, only: [:edit,:update,:destroy,:create]
   # GET /groups
   # GET /groups.json
   def index
@@ -69,7 +69,9 @@ class GroupsController < ApplicationController
     def set_group
       @group = Group.find(params[:id])
     end
-
+    def admin_user
+      redirect_to(root_url) unless current_user.admin?||current_user.teacher?
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_params
       params.require(:group).permit(:course, :faculty,:id,:name)

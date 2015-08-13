@@ -1,11 +1,10 @@
-<%= form_for([@subject, @assignment],:html=>{:multipart=>true}) do |f| %>
 
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_field :content %>
-  </div>
+<%= form_for([@subject, @assignment],:html=>{:multipart=>true}) do |f| %>
+<div class="form-group">
+    <%= f.text_field :content, :placeholder => "Title of the assignment" %>
+</div>
+<div class="form-group">
   <%= f.file_field :attachment%>
-  <div class="actions">
-    <%= f.submit %>
   </div>
+    <%= f.submit " Submit", class: "btn" %>
 <% end %>

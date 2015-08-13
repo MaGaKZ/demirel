@@ -3,7 +3,7 @@
   <% provide(:title, @subject.name) %>
 <div id="profile">
   <div class="row">
-    <div class="span6">
+    <div class="span6 image-teacher">
       <%= image_tag @user.avatar.url%> 
       <h3><%= @subject.name %></h3>
       <%if current_user.id == @user.id%>

@@ -1,5 +1,10 @@
-<h1>New subject</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', subjects_path %>
+<div class="signup">
+	<div class="span6">
+		<% provide(:title, 'New Subject') %>
+		<div class="tab-panel">
+			<div class="legend">New Subject</div>
+			<p>Enter new subject details below:</p>
+			<%= render 'form' %>
+		</div>
+	</div>
+</div>

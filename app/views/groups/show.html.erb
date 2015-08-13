@@ -1,23 +1,36 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
-
-<p>
-  <strong>Faculty:</strong>
-  <%= @group.faculty %>
-</p>
-<p>
-  <strong>Students:</strong>
-  <%= render @users %>
-</p>
-<br/><br/><br/>
-<p>
-  <strong>subjects:</strong>
-  <%= render @subjects %>
-</p>
-
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <div class="row">
+    <div class="span4">
+      <p>
+        <strong>Name:</strong>
+        <%= @group.name %>
+      </p>
+      <p>
+        <strong>Faculty:</strong>
+        <%= @group.faculty %>
+      </p>
+      <p>
+        <strong>subjects:</strong><br>
+        <%@group.subjects.each do |g| %>
+        <%=link_to g.name,g%>
+        <hr>
+        <%end%>
+      </p>
+    </div>
+    <div class="span8">
+      <p>
+        <strong>Students:</strong><br>
+        <% @group.users.each do |user|%>
+        <%=image_tag user.avatar.url,id:"avatar" %>
+        <%=link_to user.name+" "+user.surname,user%>
+        <br>
+        <hr>
+        <%end%>
+        
+        
+      </p>
+    </div>
+  </div>
+  <%= link_to 'Back', groups_path %>
+</div>
